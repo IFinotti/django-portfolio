@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% comment %} {% include "partials/_head.html" %} {% endcomment %}
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+
+  <body>
+    {% include "partials/_nav.html" %}
+    <main class="container mt-4 mb-4">
+      <!--disable-eslint-->
+      {% block content %}{% endblock content %}
+    </main>
+    {% comment %} {% include "partials/_footer.html" %} {% endcomment %}
+  </body>
+</html>

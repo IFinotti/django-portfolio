@@ -3,6 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Projects(models.Model):
+    class Meta:
+        verbose_name = 'Project'
+        verbose_name_plural = 'Projects'
+
     name = models.CharField(max_length=25)
     short_description = models.TextField(max_length=255)
     long_description = models.TextField()
