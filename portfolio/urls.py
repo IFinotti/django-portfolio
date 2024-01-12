@@ -8,7 +8,8 @@ app_name = 'portfolio'
 
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
-    path('coding/', views.Coding.as_view(), name='coding')
+    path('coding/', views.Coding.as_view(), name='coding'),
+    path('art/', views.Art.as_view(), name='art')
 ]
 
 if settings.DEBUG:

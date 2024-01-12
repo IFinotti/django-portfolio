@@ -11,3 +11,7 @@ class Home(View):
 class Coding(View):
     def get(self, request, *args, **kwargs):
         return render(self.request, 'portfolio/coding.html')
+    
+class Art(View):
+    def get(self, request, *args, **kwargs):
+        return render(self.request, 'portfolio/art.html')
