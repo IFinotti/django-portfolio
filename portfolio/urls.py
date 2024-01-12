@@ -7,7 +7,8 @@ app_name = 'portfolio'
 
 
 urlpatterns = [
-    path('', views.Home.as_view(), name='home')
+    path('', views.Home.as_view(), name='home'),
+    path('principal_photo/', views.PrincipalPhotoView.as_view(), name='principal_photo')
 ]
 
 if settings.DEBUG:
