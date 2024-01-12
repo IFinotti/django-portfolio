@@ -8,9 +8,9 @@ app_name = 'portfolio'
 
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
-    path('principal_photo/', views.PrincipalPhotoView.as_view(), name='principal_photo')
+    path('coding/', views.Coding.as_view(), name='coding')
 ]
 
-# if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

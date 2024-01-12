@@ -8,5 +8,6 @@ class Home(View):
     def get(self, request, *args, **kwargs):
         return render(self.request, 'portfolio/home.html')
     
-class PrincipalPhotoView(View):
-    pass
+class Coding(View):
+    def get(self, request, *args, **kwargs):
+        return render(self.request, 'portfolio/coding.html')
