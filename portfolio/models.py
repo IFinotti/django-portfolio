@@ -2,6 +2,13 @@ from django.db import models
 
 # Create your models here.
 
+class PrincipalPhoto(models.Model):
+    class Meta: 
+        verbose_name = 'Photo'
+        verbose_name_plural = 'Photos'
+
+    image = models.ImageField(upload_to='project_images/%Y/%m')
+    
 class Projects(models.Model):
     class Meta:
         verbose_name = 'Project'
