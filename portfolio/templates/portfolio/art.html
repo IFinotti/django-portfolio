@@ -5,6 +5,25 @@
 </div>
 
 <div class="black-section">
-  <section class="section"></section>
+  <section class="section main-content">
+    <h1 class="sections-title">Projects</h1>
+    <p class="text-content">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus vero
+      excepturi reprehenderit esse molestias doloribus nam sit at labore
+      aspernatur suscipit eveniet dolores itaque rerum non cupiditate qui sed,
+      cum nemo nesciunt tenetur! Ipsum non quae natus ad. Debitis corporis hic
+      temporibus expedita minus voluptas inventore earum accusantium saepe
+      dolores.
+    </p>
+    <div class="grid-projects">
+      {% for project in art_projects %}
+      <div class="grid-projects-item">
+        <h1 class="title-project">{{project.name}}</h1>
+        <img src="{{project.image.url}}" alt="{{project.name}}" />
+        <p class="text-description">{{project.short_description}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
 </div>
 {% endblock content %}

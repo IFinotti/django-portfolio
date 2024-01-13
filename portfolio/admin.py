@@ -3,5 +3,5 @@ from . import models
 # Register your models here.
 
 
-admin.site.register(models.Projects)
+admin.site.register(models.ArtProjects)
 admin.site.register(models.PrincipalPhoto)
