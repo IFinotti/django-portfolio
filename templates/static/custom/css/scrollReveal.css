@@ -1,6 +1,9 @@
 .grid,
 .text-content,
 .sections-title,
-.title {
+.title,
+.img-art,
+.text-description,
+.title-project {
   visibility: hidden;
 }

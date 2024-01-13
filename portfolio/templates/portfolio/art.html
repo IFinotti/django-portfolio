@@ -19,7 +19,11 @@
       {% for project in art_projects %}
       <div class="grid-projects-item">
         <h1 class="title-project">{{project.name}}</h1>
-        <img src="{{project.image.url}}" alt="{{project.name}}" />
+        <img
+          class="img-art"
+          src="{{project.image.url}}"
+          alt="{{project.name}}"
+        />
         <p class="text-description">{{project.short_description}}</p>
       </div>
       {% endfor %}
