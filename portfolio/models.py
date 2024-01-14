@@ -8,11 +8,6 @@ import os
 
 # Create your models here.
 
-class PrincipalPhoto(models.Model):
-    class Meta: 
-        verbose_name = 'Photo'
-
-    image = models.ImageField(upload_to='principal_photo/%Y%m')
 
 class ArtProjects(models.Model):
     class Meta:

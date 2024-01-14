@@ -2,11 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from . import models
 from django.views import View
 from django.http import HttpResponse
-import os
 
 class Home(View):
+    template_name = 'portfolio/home.html'
     def get(self, request, *args, **kwargs):
-        return render(self.request, 'portfolio/home.html')
+        return render(self.request, self.template_name)
+        
     
 class Coding(View):
     def get(self, request, *args, **kwargs):
