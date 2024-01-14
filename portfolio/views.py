@@ -16,14 +16,16 @@ class Art(View):
     template_name = 'portfolio/art.html'
 
     def get(self, request, *args, **kwargs):
-        # Verifica se há um slug na URL
+        # get the value of the key 'slug', that came from the model
         slug = kwargs.get('slug')
         
         if slug:
-            # Se houver um slug, exibe os detalhes do projeto específico
+            # if 'slug' exists, get the object ArtProjects or return a 404
             project = get_object_or_404(models.ArtProjects, slug=slug)
+            # render the page, using the project as the context
             return render(self.request, self.template_name, {'project': project})
         else:
-            # Se não houver slug, exibe a lista de projetos
+            # if "slug" doesnt exists, get all the objects 
             art_projects = models.ArtProjects.objects.all()
+            # render the page, using the project list as the context
             return render(self.request, self.template_name, {'art_projects': art_projects})
