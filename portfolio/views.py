@@ -5,9 +5,8 @@ from django.http import HttpResponse
 
 class Home(View):
     template_name = 'portfolio/home.html'
-    ordering = ['-id']
-    # def get(self, request, *args, **kwargs):
-    #     return render(self.request, self.template_name)
+    def get(self, request, *args, **kwargs):
+        return render(self.request, self.template_name)
         
     
 class Coding(View):
