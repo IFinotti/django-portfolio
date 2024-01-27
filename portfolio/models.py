@@ -9,8 +9,8 @@ import os
 # Create your models here.
 class MainPhoto(models.Model):
     class Meta:
-        verbose_name = 'Project'
-        verbose_name_plural = 'Projects'
+        verbose_name = 'Photo'
+        verbose_name_plural = 'Photos'
 
     image = models.ImageField(upload_to='main_photo/%Y/%m', unique=True)
     slug = models.SlugField(unique=True, blank=True, null=True)
