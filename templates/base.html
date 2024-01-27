@@ -4,8 +4,8 @@
     {% include "partials/_head.html" %}
 
     <title>
-      {% if {% block title %}{% endblock title %} %} - Finotti {% else %}
-      Finotti {% endif %}
+      {% block title %} {% if title %} {{ title }} - Finotti {% else %} Finotti
+      {% endif %} {% endblock title %}
     </title>
   </head>
 
