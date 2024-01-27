@@ -7,11 +7,7 @@
         Olá, meu nome é <bold class="text-shadow">Finotti</bold>
       </h1>
       {% if principal_photo %}
-      <img
-        class="me"
-        src="../../../static/admin/img/my-photos/me.jpeg"
-        alt="Principal Photo"
-      />
+      <img class="me" src="{{photo.image.url}}" alt="Principal Photo" />
       {% else %}
       <h1 class="title">No photo found</h1>
       {% endif %}

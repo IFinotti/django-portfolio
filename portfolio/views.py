@@ -6,6 +6,11 @@ from django.http import HttpResponse
 class Home(View):
     template_name = 'portfolio/home.html'
     def get(self, request, *args, **kwargs):
+        slug = kwargs.get('slug')
+        
+        if slug:
+            photo = get_object_or_404(models.MainPhoto, slug=slug)
+            return render(self.request, self.template_name, {'photo': photo})
         return render(self.request, self.template_name)
         
     

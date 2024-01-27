@@ -7,6 +7,14 @@ import os
 
 
 # Create your models here.
+class MainPhoto(models.Model):
+    class Meta:
+        verbose_name = 'Project'
+        verbose_name_plural = 'Projects'
+
+    image = models.ImageField(upload_to='main_photo/%Y/%m', unique=True)
+    slug = models.SlugField(unique=True, blank=True, null=True)
+
 
 
 class ArtProjects(models.Model):
