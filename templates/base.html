@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     {% include "partials/_head.html" %}
-    <title>{% block title %}{% endblock title %}Finotti</title>
+
+    <title>
+      {% if {% block title %}{% endblock title %} %} - Finotti {% else %}
+      Finotti {% endif %}
+    </title>
   </head>
 
   <body>
