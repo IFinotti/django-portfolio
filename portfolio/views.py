@@ -5,10 +5,11 @@ from django.http import HttpResponse
 
 class Home(View):
     template_name = 'portfolio/home.html'
+
     def get(self, request, *args, **kwargs):
-        photo = models.MainPhoto.objects.first()
-        return render(self.request, self.template_name, {'photo': photo})
-        
+        principal_photo = models.Photo.objects.first()
+        return render(request, self.template_name, {'principal_photo': principal_photo})
+
     
 class Coding(View):
     def get(self, request, *args, **kwargs):

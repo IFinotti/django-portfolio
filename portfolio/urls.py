@@ -8,6 +8,7 @@ app_name = 'portfolio'
 
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
+    path('photo/<int:photo_id>/', views.Home.as_view, name='home_with_photo'),
     path('coding/', views.Coding.as_view(), name='coding'),
     path('art/', views.Art.as_view(), name='art')
 ]
