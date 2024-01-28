@@ -6,13 +6,15 @@ from django.http import HttpResponse
 class Home(View):
     template_name = 'portfolio/home.html'
     def get(self, request, *args, **kwargs):
-        return render(self.request, self.template_name)
+        photo = models.MainPhoto.objects.first()
+        return render(self.request, self.template_name, {'photo': photo})
         
     
 class Coding(View):
     def get(self, request, *args, **kwargs):
         return render(self.request, 'portfolio/coding.html')
     
+
 class Art(View):
     template_name = 'portfolio/art.html'
 
