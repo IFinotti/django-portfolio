@@ -8,6 +8,14 @@ import os
 
 # Create your models here.
 
+class CodingPhoto(models.Model):
+    image = models.ImageField(upload_to='coding_photo/%Y/%m')
+    name = models.CharField(max_length=25)
+    slug = models.SlugField(unique=True, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+    
 class Photo(models.Model):
     image = models.ImageField(upload_to='main_photo/%Y/%m')
     name = models.CharField(max_length=25)
