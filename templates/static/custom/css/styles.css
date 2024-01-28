@@ -301,7 +301,6 @@ footer p {
 
   footer h2 {
     font-size: 2.2rem;
-    /* position: absolute; */
   }
 
   footer p {
@@ -319,17 +318,12 @@ footer p {
     margin-bottom: 2rem;
   }
 
-  .main-title {
-    font-size: 2.3rem;
-    margin: 0.2rem 0 0 8rem;
-  }
-
   .menu ul {
     margin: 0 2rem;
   }
 }
 
-@media screen and (max-width: 7.68rem) {
+@media screen and (max-width: 60rem) {
   .menu {
     text-align: center;
     bottom: 0;
