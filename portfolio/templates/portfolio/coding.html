@@ -4,12 +4,16 @@
   <section class="section main-content">
     <div class="grid">
       <h1 class="title">Programação e desenvolvimento</h1>
-      <img class="me" src="./assets/images/backenddev.jpg" alt="" />
+      {% if principal_photo %}
+      <img class="me" src="{{principal_photo.image.url}}" alt="" />
+      {% else %}
+      <h1 class="title">No photo found</h1>
+      {% endif %}
     </div>
     <div class="text-content">
       <p>
-        O que mais gosto nesse meio, <br />e como comecei a me interessar por
-        isso!
+        O que mais gosto nesse meio, <br />e como comecei a me interessar pelo
+        assunto!
       </p>
     </div>
   </section>

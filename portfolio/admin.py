@@ -5,5 +5,6 @@ from . import models
 class ArtProjectsAdmin(admin.ModelAdmin):
     list_display = ['name', 'short_description']
 
+admin.site.register(models.CodingPhoto)
 admin.site.register(models.Photo)
 admin.site.register(models.ArtProjects, ArtProjectsAdmin)

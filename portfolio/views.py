@@ -12,8 +12,11 @@ class Home(View):
 
     
 class Coding(View):
+    template_name = 'portfolio/coding.html'
+    
     def get(self, request, *args, **kwargs):
-        return render(self.request, 'portfolio/coding.html')
+        principal_photo = models.CodingPhoto.objects.first()
+        return render(self.request, self.template_name,{'principal_photo':principal_photo})
     
 
 class Art(View):

@@ -16,6 +16,13 @@ class CodingPhoto(models.Model):
     def __str__(self):
         return self.name
     
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            slug = f'{slugify(self.name)}-{self.pk}'
+            self.slug = slug
+
+        super().save(*args, **kwargs)
+    
 class Photo(models.Model):
     image = models.ImageField(upload_to='main_photo/%Y/%m')
     name = models.CharField(max_length=25)
@@ -24,6 +31,7 @@ class Photo(models.Model):
     def __str__(self):
         return self.name
     
+
     def save(self, *args, **kwargs):
         if not self.slug:
             slug = f'{slugify(self.name)}-{self.pk}'
