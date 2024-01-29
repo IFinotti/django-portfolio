@@ -16,7 +16,20 @@ class Coding(View):
     
     def get(self, request, *args, **kwargs):
         principal_photo = models.CodingPhoto.objects.first()
-        return render(self.request, self.template_name,{'principal_photo':principal_photo})
+        slug = kwargs.get('slug')
+
+        context = {
+            'principal_photo': principal_photo
+        }
+
+        if slug:
+            context['project'] = project
+            project = get_object_or_404(models.CodeProjects, slug=slug)
+            return render(self.request, self.template_name, context)
+        else: 
+            context['code_projects'] = code_projects
+            code_projects = models.CodeProjects.objects.all()
+            return render(self.request, self.template_name, context)
     
 
 class Art(View):
