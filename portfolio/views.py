@@ -15,16 +15,15 @@ class Coding(View):
     template_name = 'portfolio/coding.html'
     
     def get(self, request, *args, **kwargs):
-        principal_photo = models.CodingPhoto.objects.first()
-        code_projects = models.CodeProjects.objects.all()
-
-        context = {
-            'principal_photo': principal_photo,
-            'code_projects': code_projects,
-        }
+        # get the value of the key 'slug', that came from the model
+        slug = kwargs.get('slug')
         
-        return render(self.request, self.template_name, context)
-    
+        if slug:
+            project = get_object_or_404(models.CodeProjects, slug=slug)
+            return render(self.request, self.template_name, {'project': project})
+        else:
+            code_projects = models.CodeProjects.objects.all()
+            return render(self.request, self.template_name, {'code_projects': code_projects})
 
 class Art(View):
     template_name = 'portfolio/art.html'
