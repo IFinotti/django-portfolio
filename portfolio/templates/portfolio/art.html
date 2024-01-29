@@ -5,11 +5,15 @@
   <section class="section main-content">
     <div class="grid">
       <h1 class="title">Arte e projetos artísticos</h1>
-      <!-- {% if principal_photo %}
-      <img class="me" src="{{principal_photo.image.url}}" alt="" />
+      {% if principal_photo %}
+      <img
+        class="me"
+        src="{{principal_photo.image.url}}"
+        alt="{{principal_photo.name}}"
+      />
       {% else %}
       <h1 class="title">No photo found</h1>
-      {% endif %} -->
+      {% endif %}
     </div>
     <div class="text-content">
       <p>Um pouco sobre minha atividade favorita.</p>

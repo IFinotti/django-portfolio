@@ -8,4 +8,5 @@ class ArtProjectsAdmin(admin.ModelAdmin):
 admin.site.register(models.Photo)
 admin.site.register(models.CodingPhoto)
 admin.site.register(models.CodeProjects)
+admin.site.register(models.ArtPhoto)
 admin.site.register(models.ArtProjects, ArtProjectsAdmin)

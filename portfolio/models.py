@@ -12,7 +12,7 @@ class CodingPhoto(models.Model):
     class Meta:
         verbose_name = 'Code photo'
 
-    image = models.ImageField(upload_to='coding_photo/%Y/%m')
+    image = models.ImageField(upload_to='coding/main_photo/%Y/%m')
     name = models.CharField(max_length=25)
     slug = models.SlugField(unique=True, blank=True, null=True)
 
@@ -54,7 +54,7 @@ class ArtProjects(models.Model):
     name = models.CharField(max_length=25)
     short_description = models.TextField(max_length=255)
     long_description = models.TextField()
-    image = models.ImageField(upload_to='project_images/%Y/%m', unique=True)
+    image = models.ImageField(upload_to='art/projects/%Y/%m', unique=True)
     slug = models.SlugField(unique=True, blank=True, null=True)
 
     @staticmethod  # <- there is no 'self' in the method
@@ -95,7 +95,7 @@ class CodeProjects(models.Model):
     name = models.CharField(max_length=25)
     short_description = models.TextField(max_length=255)
     long_description = models.TextField()
-    image = models.ImageField(upload_to='coding_photo/%Y/%m', unique=True)
+    image = models.ImageField(upload_to='coding/projects/%Y/%m', unique=True)
     slug = models.SlugField(unique=True, blank=True, null=True)
 
     @staticmethod  # <- there is no 'self' in the method
@@ -127,5 +127,21 @@ class CodeProjects(models.Model):
     def __str__(self):
         return self.name
 
+class ArtPhoto(models.Model):
+    class Meta:
+        verbose_name = 'Art photo'
+
+    image = models.ImageField(upload_to='art/main_photo/%Y/%m')
+    name = models.CharField(max_length=25)
+    slug = models.SlugField(unique=True, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
     
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            slug = f'{slugify(self.name)}-{self.pk}'
+            self.slug = slug
+
+        super().save(*args, **kwargs)
     
