@@ -3,10 +3,7 @@
   <head>
     {% include "partials/_head.html" %}
 
-    <title>
-      {% block title %} {% if title %} {{ title }} - Finotti {% else %} Finotti
-      {% endif %} {% endblock title %}
-    </title>
+    <title>{% block title %}{% endblock title %} Finotti</title>
   </head>
 
   <body>
