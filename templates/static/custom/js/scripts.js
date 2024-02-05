@@ -1,6 +1,7 @@
 const closeMenuButton = document.getElementById("close-menu");
 const menu = document.querySelector(".menu");
 const menuLink = document.querySelector(".menu-link");
+const galleryLink = document.querySelector(".gallery-link");
 
 closeMenuButton.addEventListener("change", function () {
   if (this.checked) {
@@ -19,4 +20,10 @@ menuLink.addEventListener("click", function () {
     menu.style.display = "none";
     closeMenuButton.checked = false;
   }
+});
+
+galleryLink.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  alert("Em breve, uma loja das minhas obras.");
 });
