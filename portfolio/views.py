@@ -24,7 +24,7 @@ class Coding(View):
             project = get_object_or_404(models.CodeProjects, slug=slug)
             context['project'] = project
             return render(self.request, self.template_name, context)
-        code_projects = models.CodeProjects.objects.all()
+        code_projects = models.CodeProjects.objects.order_by('-id').all()
         context['code_projects'] = code_projects  
         return render(self.request, self.template_name,context)
 
@@ -42,6 +42,6 @@ class Art(View):
             project = get_object_or_404(models.ArtProjects, slug=slug)
             context['project'] = project
             return render(self.request, self.template_name, context)
-        art_projects = models.ArtProjects.objects.all()
+        art_projects = models.ArtProjects.objects.order_by('-id').all()
         context['art_projects'] = art_projects
         return render(self.request, self.template_name, context)
