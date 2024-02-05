@@ -50,11 +50,13 @@ class ArtProjects(models.Model):
     class Meta:
         verbose_name = 'Draw'
         verbose_name_plural = 'Draws'
+        ordering = ['order']
 
     name = models.CharField(max_length=25)
     short_description = models.TextField(max_length=255)
     long_description = models.TextField()
     image = models.ImageField(upload_to='art/projects/%Y/%m', unique=True)
+    order = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True, blank=True, null=True)
 
     @staticmethod  # <- there is no 'self' in the method
