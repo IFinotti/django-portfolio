@@ -24,7 +24,7 @@ class Coding(View):
             project = get_object_or_404(models.CodeProjects, slug=slug)
             context['project'] = project
             return render(self.request, self.template_name, context)
-        code_projects = models.CodeProjects.objects.order_by('-id').all()
+        code_projects = models.CodeProjects.objects.all()
         context['code_projects'] = code_projects  
         return render(self.request, self.template_name,context)
 
