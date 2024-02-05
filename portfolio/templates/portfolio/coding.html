@@ -5,7 +5,11 @@
     <div class="grid">
       <h1 class="title">Programação e desenvolvimento</h1>
       {% if principal_photo %}
-      <img class="me" src="{{principal_photo.image.url}}" alt="" />
+      <img
+        class="me"
+        src="{{principal_photo.image.url}}"
+        alt="{{principal_photo.name}}"
+      />
       {% else %}
       <h1 class="title">No photo found</h1>
       {% endif %}
@@ -36,12 +40,11 @@
   <section class="section main-content">
     <h1 class="sections-title">Projetos</h1>
     <p class="text-content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nulla
-      pariatur illum libero aliquid labore voluptates quaerat eius, culpa
-      laboriosam quos esse facilis beatae sequi corrupti iusto ipsam aspernatur
-      in et cumque. Explicabo voluptate recusandae ex veniam qui deleniti, unde
-      repellendus at? Optio, totam inventore repellat adipisci beatae ut
-      asperiores!
+      Meus projetos envolvendo o desenvolvimento e programação. A maioria deles
+      eu sempre continuo atualizando e modificando algo, seja no front-end ou no
+      back-end. <br />
+      Meu intuito agora é fazer o deploy de todos, ou pelo menos os mais
+      aplicáveis na vida real.
     </p>
     <div class="grid-projects">
       {% for project in code_projects %}
