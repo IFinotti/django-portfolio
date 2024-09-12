@@ -25,5 +25,5 @@ menuLink.addEventListener("click", function () {
 galleryLink.addEventListener("click", function (e) {
   e.preventDefault();
 
-  alert("Em breve, uma loja das minhas obras.");
+  alert("Em breve, uma loja  minhas obras.");
 });
